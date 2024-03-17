@@ -1,6 +1,11 @@
 @if (meal(); as meal) {
 <mat-card class="example-card">
-  <img mat-card-image [src]="meal.strMealThumb" [alt]="meal.strMeal" />
+  <img
+    mat-card-image
+    [src]="meal.strMealThumb"
+    [alt]="meal.strMeal"
+    loading="lazy"
+  />
   <mat-card-header>
     <mat-card-title class="card-title">{{ meal.strMeal }}</mat-card-title>
   </mat-card-header>

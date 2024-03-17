@@ -1,5 +1,10 @@
 <div class="grid-box">
   @for (food of foods(); track $index) {
-    <app-food-card [meal]="food" (likeBtnClicked)="onLikeBtnClicked($event)" />
+    @defer {
+     <app-food-card [meal]="food" (likeBtnClicked)="onLikeBtnClicked($event)" />
+    }
+    @placeholder {
+      <app-card-placeholder />
+    }
   }
 </div>

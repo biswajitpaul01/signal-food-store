@@ -65,6 +65,12 @@ export class CartService extends ApiService {
         this.notificationService.show(`🔔 ${item.title} has been removed from cart.`);
     }
 
+    clearCart(): void {
+        this._items.clear();
+        this._cartItems.set([]);
+        this.storageService.set(this._storageKey, []);
+    }
+
     private setSessionValues(): void {
         const cartItemsFromSessionStorage = this.storageService.get(this._storageKey);
 

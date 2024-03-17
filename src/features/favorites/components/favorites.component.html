@@ -1,9 +1,9 @@
 <div class="favorites-wrapper">
   <mat-tab-group>
-    <mat-tab label="Favorite Categories">
+    <mat-tab [label]="favoriteCategoriesLabel()">
       <app-favorite-categories />
     </mat-tab>
-    <mat-tab label="Favorite Foods">
+    <mat-tab [label]="favoriteFoodsLabel()">
       <app-favorite-foods />
     </mat-tab>
   </mat-tab-group>

@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { CardPlaceholderComponent } from "../../../shared/components/card-placeholder/card-placeholder.component";
 import { FoodCardComponent } from "../../../shared/components/food-card/food-card.component";
 import { FavoriteType } from "../../../shared/enums";
 import { FavoriteService } from "../../favorites/services/favorite.service";
@@ -12,8 +13,8 @@ import { FoodDetailsComponent } from "./food-details/food-details.component";
     styleUrl: './foods.component.scss',
     imports: [
         FoodDetailsComponent,
-        FoodCardComponent
-    ],
+        FoodCardComponent,
+        CardPlaceholderComponent],
     standalone: true
 })
 export class FoodsComponent implements OnInit {

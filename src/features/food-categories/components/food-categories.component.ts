@@ -1,4 +1,5 @@
 import { Component, inject } from "@angular/core";
+import { CardPlaceholderComponent } from "../../../shared/components/card-placeholder/card-placeholder.component";
 import { CategoryCardComponent } from "../../../shared/components/category-card/category-card.component";
 import { FavoriteType } from "../../../shared/enums";
 import { FavoriteService } from "../../favorites/services/favorite.service";
@@ -9,7 +10,8 @@ import { FoodCategoryService } from "../services/food-category.service";
     templateUrl: './food-categories.component.html',
     styleUrl: './food-categories.component.scss',
     imports: [
-        CategoryCardComponent
+        CategoryCardComponent,
+        CardPlaceholderComponent
     ],
     standalone: true
 })

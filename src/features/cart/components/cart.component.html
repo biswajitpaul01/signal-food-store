@@ -63,35 +63,42 @@
   </table>
 
   <div class="shipping-wrapper">
-    <div class="shipping-box">
-      <table
-        class="table"
-        border="1"
-        [cellPadding]="10"
-        [cellSpacing]="10"
-        [width]="300"
-      >
-        <tbody>
-          <tr>
-            <th align="right">Sub Total</th>
-            <td align="right">{{ cartSubtotal() | currency }}</td>
-          </tr>
-          <tr>
-            <th align="right">Tax</th>
-            <td align="right">{{ tax() | currency }}</td>
-          </tr>
-          <tr>
-            <th align="right">Shipping Cost</th>
-            <td align="right">
-              {{ shippingCharge() ? (shippingCharge() | currency) : "FREE" }}
-            </td>
-          </tr>
-          <tr>
-            <th align="right">Total</th>
-            <td align="right">{{ cartTotal() | currency }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div>
+      <div class="shipping-box">
+        <table
+          class="table"
+          border="1"
+          [cellPadding]="10"
+          [cellSpacing]="10"
+          [width]="300"
+        >
+          <tbody>
+            <tr>
+              <th align="right">Sub Total</th>
+              <td align="right">{{ cartSubtotal() | currency }}</td>
+            </tr>
+            <tr>
+              <th align="right">Tax</th>
+              <td align="right">{{ tax() | currency }}</td>
+            </tr>
+            <tr>
+              <th align="right">Shipping Cost</th>
+              <td align="right">
+                {{ shippingCharge() ? (shippingCharge() | currency) : "FREE" }}
+              </td>
+            </tr>
+            <tr>
+              <th align="right">Total</th>
+              <td align="right">{{ cartTotal() | currency }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="checkout-actions">
+        <button mat-raised-button color="warn" routerLink="/checkout">
+          Proceed to Checkout <mat-icon>east</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
   } @else {

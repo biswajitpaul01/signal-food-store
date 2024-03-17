@@ -47,8 +47,8 @@ export class FavoriteService {
         if (type === FavoriteType.CATEGORY) {
             const elem = item as FoodCategory;
 
-            if (!this._favoriteCategoriesMap.has(elem.strCategory)) {
-                this._favoriteCategoriesMap.set(elem.strCategory, elem);
+            if (!this._favoriteCategoriesMap.has(elem.idCategory)) {
+                this._favoriteCategoriesMap.set(elem.idCategory, elem);
                 this.favoriteCategories.set([...this._favoriteCategoriesMap.values()]);
                 this.storageService.set(this._categoryStorageKey, this.favoriteCategories());
                 this.notificationService.show(`🎉 ${elem.strCategory} has been added to favorites.`);

@@ -8,11 +8,15 @@ export const featureRoutes: Routes = [{
     path: 'food/:id',
     loadComponent: () => import('./foods/components/food-details/food-details.component').then(c => c.FoodDetailsComponent)
 }, {
+    path: 'favorites',
+    title: 'Favorites',
+    loadComponent: () => import('./favorites/components/favorites.component').then(c => c.FavoritesComponent)
+}, {
     path: 'cart',
     title: 'Cart',
     loadComponent: () => import('./cart/components/cart.component').then(c => c.CartComponent)
 }, {
-    path: 'favorites',
-    title: 'Favorites',
-    loadComponent: () => import('./favorites/components/favorites.component').then(c => c.FavoritesComponent)
+    path: 'checkout',
+    title: 'Checkout',
+    loadComponent: () => import('./checkout/components/checkout.component').then(c => c.CheckoutComponent)
 }];
