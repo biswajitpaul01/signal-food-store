@@ -1,0 +1,56 @@
+@if (food(); as food) {
+<div class="food-wrapper">
+  <div class="food-picture">
+    <img [src]="food.thumb" [alt]="food.title" class="main-image" />
+  </div>
+  <div class="food-instructions">
+    <h1>{{ food.title }}</h1>
+    <ul class="food-info">
+      <li>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="location icon"
+          color="primary"
+          fontIcon="category"
+        ></mat-icon>
+        {{ food.category }}
+      </li>
+      <li>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="location icon"
+          color="accent"
+          fontIcon="pin_drop"
+        ></mat-icon>
+        {{ food.area }}
+      </li>
+    </ul>
+    <mat-chip-set>
+      @for (tag of food.tags; track $index) {
+        <mat-chip>
+          {{ tag }}
+        </mat-chip>
+      }
+    </mat-chip-set>
+
+    <h2 class="instructions">Instructions</h2>
+    <p class="mat-body">{{ food.instructions }}</p>
+    <h3 class="currency">
+      <strong>Price:</strong> {{ food.price | currency }}
+    </h3>
+    <div class="cart-actions">
+      <button mat-raised-button color="warn" (click)="addToCart(food)">
+        <mat-icon>add_shopping_cart</mat-icon> Add to Shopping List
+      </button>
+    </div>
+    <h2>List of Ingredients</h2>
+    <div class="food-ingredients">
+      @for (ingredient of food.ingredients; track $index) {
+      <div class="ingredient">
+        <app-img-figure [src]="ingredient.thumbUrl" [caption]="ingredient.name" />
+      </div>
+      }
+    </div>
+  </div>
+</div>
+}

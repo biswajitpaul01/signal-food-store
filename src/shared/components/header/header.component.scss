@@ -1,0 +1,22 @@
+.navbar-menu {
+  list-style-type: none;
+  padding: 1rem;
+  display: flex;
+  column-gap: 2rem;
+  margin: 0;
+  box-sizing: border-box;
+
+  li {
+    a {
+      color: gray;
+      display: flex;
+      align-items: flex-end;
+      column-gap: 7px;
+      text-decoration: none;
+
+      &.active {
+        color: deepskyblue;
+      }
+    }
+  }
+}

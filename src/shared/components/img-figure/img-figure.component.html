@@ -1,0 +1,6 @@
+<figure class="figure" [style]="{ alignItems: align() }">
+  <picture>
+    <img [src]="src()" [alt]="caption()" [attr.width]="size() ? size() : ''" />
+  </picture>
+  <figcaption class="mat-caption">{{ caption() }}</figcaption>
+</figure>

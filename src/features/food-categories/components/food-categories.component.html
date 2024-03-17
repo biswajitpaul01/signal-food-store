@@ -1,0 +1,5 @@
+<div class="grid-box">
+  @for (category of foodCategories(); track $index) {
+    <app-category-card [category]="category" (likeBtnClicked)="onLikeBtnClicked($event)" />
+  }
+</div>

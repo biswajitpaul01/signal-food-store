@@ -1,0 +1,19 @@
+<nav>
+    <ul class="navbar-menu">
+        <li>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="home"></mat-icon> Home
+            </a>
+        </li>
+        <li>
+            <a routerLink="/favorites" routerLinkActive="active">
+                <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite"></mat-icon> Favorites
+            </a>
+        </li>
+        <li>
+            <a routerLink="/cart" routerLinkActive="active">
+                <mat-icon [matBadge]="cartTotal()" matBadgeColor="warn" aria-hidden="false" aria-label="cart icon" fontIcon="shopping_cart"></mat-icon> Cart
+            </a>
+        </li>
+    </ul>
+</nav>

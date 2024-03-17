@@ -1,0 +1,5 @@
+<div class="grid-box">
+    @for (food of favoriteFoods(); track food) {
+        <app-food-card [meal]="food" [likeIcon]="'remove'" (likeBtnClicked)="onLikeBtnClicked($event)" />
+    }
+</div>

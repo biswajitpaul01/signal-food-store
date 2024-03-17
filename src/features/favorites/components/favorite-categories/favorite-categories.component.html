@@ -1,0 +1,5 @@
+<div class="grid-box">
+    @for (category of favoriteCategories(); track category) {
+        <app-category-card [category]="category" [likeIcon]="'remove'" (likeBtnClicked)="onLikeBtnClicked($event)" />
+    }
+</div>

@@ -1,0 +1,24 @@
+.cart-wrapper {
+  padding: 1rem;
+}
+
+.table {
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.shipping-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.preview-col {
+  padding: 1rem 0;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

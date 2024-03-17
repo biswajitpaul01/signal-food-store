@@ -1,0 +1,94 @@
+<div class="cart-wrapper">
+  <h1>Manage Cart</h1>
+
+  @if (cartItems().length) {
+
+  <table mat-table [dataSource]="dataSource()" class="mat-elevation-z8">
+    <!-- Preview Column -->
+    <ng-container matColumnDef="preview">
+      <th mat-header-cell *matHeaderCellDef>Preview</th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/food', element.id]" class="preview-col">
+          <app-img-figure
+            [src]="element.thumb + '/preview'"
+            [caption]="element.title"
+            [size]="75"
+            align="flex-start"
+          />
+        </a>
+      </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let element">{{ element.price | currency }}</td>
+    </ng-container>
+
+    <!-- Quantity Column -->
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef>Quantity</th>
+      <td mat-cell *matCellDef="let element">
+        <select (change)="cartQtyChange($event, element)">
+          <option disabled>Select</option>
+          @for (qty of totalQuantities(); track $index) {
+          <option [value]="qty" [selected]="element.quantity == qty">
+            {{ qty }}
+          </option>
+          }
+        </select>
+      </td>
+    </ng-container>
+
+    <!-- Total Price Column -->
+    <ng-container matColumnDef="totalPrice">
+      <th mat-header-cell *matHeaderCellDef>Total Price</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.totalPrice | currency }}
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-mini-fab color="warn" (click)="removeCartItem(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <div class="shipping-wrapper">
+    <div class="shipping-box">
+      <table class="table" border="1" [cellPadding]="10" [cellSpacing]="10" [width]="300">
+        <tbody>
+          <tr>
+            <th align="right">Sub Total</th>
+            <td align="right">{{ cartSubtotal() | currency }}</td>
+          </tr>
+          <tr>
+            <th align="right">Tax</th>
+            <td align="right">{{ tax() | currency }}</td>
+          </tr>
+          <tr>
+            <th align="right">Shipping Cost</th>
+            <td align="right">
+              {{ shippingCharge() ? (shippingCharge() | currency) : "FREE" }}
+            </td>
+          </tr>
+          <tr>
+            <th align="right">Total</th>
+            <td align="right">{{ cartTotal() | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  } @else {
+  <p>Your cart is empty.</p>
+  }
+</div>

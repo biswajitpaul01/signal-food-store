@@ -1,0 +1,9 @@
+@mixin card-actions {
+  margin-top: auto;
+  justify-content: space-between;
+}
+
+@mixin card-title {
+  font-size: 1rem;
+  line-height: 24px;
+}

@@ -1,0 +1,9 @@
+@import "../../styles/ng-material_mixins.scss";
+
+.card-actions {
+  @include card-actions();
+}
+
+.card-title {
+  @include card-title;
+}

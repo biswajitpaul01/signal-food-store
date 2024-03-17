@@ -1,0 +1,16 @@
+@if (meal(); as meal) {
+<mat-card class="example-card">
+  <img mat-card-image [src]="meal.strMealThumb" [alt]="meal.strMeal" />
+  <mat-card-header>
+    <mat-card-title class="card-title">{{ meal.strMeal }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions class="card-actions">
+    <button mat-button color="warn" (click)="setFavorite(meal)">
+      <mat-icon>{{ likeIcon() }}</mat-icon> Like
+    </button>
+    <button mat-button color="primary" (click)="viewDetails(meal)">
+      Details
+    </button>
+  </mat-card-actions>
+</mat-card>
+}

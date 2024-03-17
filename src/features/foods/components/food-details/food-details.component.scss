@@ -1,0 +1,36 @@
+.food-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.main-image {
+  border-radius: 6px;
+}
+
+.food-info {
+  padding: 0;
+  display: flex;
+  column-gap: 1rem;
+
+  li {
+    display: inline-flex;
+    column-gap: 6px;
+    align-items: center;
+  }
+}
+
+.instructions {
+  margin-bottom: 0.3rem;
+}
+
+.cart-actions {
+  margin-bottom: 1rem;
+}
+
+.food-ingredients {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
