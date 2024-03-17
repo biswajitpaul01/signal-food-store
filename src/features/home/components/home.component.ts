@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ErrorComponent } from "../../../shared/components/error/error.component";
 import { LoaderComponent } from "../../../shared/components/loader/loader.component";
 import { FoodCategoriesComponent } from "../../food-categories/components/food-categories.component";
 
@@ -8,7 +9,8 @@ import { FoodCategoriesComponent } from "../../food-categories/components/food-c
     styleUrl: './home.component.scss',
     imports: [
         FoodCategoriesComponent,
-        LoaderComponent
+        LoaderComponent,
+        ErrorComponent
     ],
     standalone: true
 })

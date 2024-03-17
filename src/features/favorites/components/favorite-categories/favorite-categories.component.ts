@@ -16,7 +16,7 @@ export class FavoriteCategoriesComponent {
     private readonly favoriteService = inject(FavoriteService);
     readonly favoriteCategories = this.favoriteService.favoriteCategories;
 
-    onLikeBtnClicked(meal: any): void {
-        this.favoriteService.removeFavorite(FavoriteType.CATEGORY, meal);
+    onLikeBtnClicked(category: any): void {
+        this.favoriteService.removeFavorite(FavoriteType.CATEGORY, category);
     }
 }

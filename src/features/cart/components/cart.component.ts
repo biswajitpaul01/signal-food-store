@@ -14,7 +14,15 @@ import { CartService } from "../services/cart.service";
     selector: 'app-cart',
     templateUrl: './cart.component.html',
     styleUrl: './cart.component.scss',
-    imports: [JsonPipe, CurrencyPipe, MatButtonModule, MatIconModule, ImgFigureComponent, RouterLink, MatTableModule],
+    imports: [
+        JsonPipe,
+        CurrencyPipe,
+        MatButtonModule,
+        MatIconModule,
+        ImgFigureComponent,
+        RouterLink,
+        MatTableModule
+    ],
     standalone: true
 })
 export class CartComponent {
